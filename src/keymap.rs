@@ -3,8 +3,11 @@
 use std::fmt;
 use std::str::FromStr;
 
+extern crate serde;
+use self::serde::{Deserialize, Serialize};
+
 /// A list of supported keys that we can query from the OS. Outside of mod.
-#[derive(Debug, Eq, PartialEq, Hash, Clone, Copy)]
+#[derive(Debug, Eq, PartialEq, Hash, Clone, Copy, Deserialize, Serialize)]
 #[allow(missing_docs)]
 pub enum Keycode {
     Key0,
